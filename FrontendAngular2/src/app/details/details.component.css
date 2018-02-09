@@ -1,0 +1,8 @@
+.nav-link {
+  cursor:pointer;
+}
+
+agm-map {
+  height: 300px;
+  width: 500px;
+}
