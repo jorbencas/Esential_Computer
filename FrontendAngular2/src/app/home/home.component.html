@@ -1,0 +1,105 @@
+<!-- Banner -->
+<section id="banner">
+	<div class="inner">
+		<h2>Spectral</h2>
+	</div>
+	<a href="#products" class="more scrolly">Componentes</a>
+</section>
+
+<!-- One -->
+<section id="one" class="wrapper style1 special">
+	<div class="inner">
+		<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+			<input type="text" name="first"  placeholder="Search your favorite products" ngModel #first="ngModel">
+			<button class="button fit" >Submit</button>
+		</form>
+	</div>
+</section>
+
+<!-- Three -->
+<section id="three" class="wrapper style3 special">
+	<div class="inner">
+		<h1>Categorias</h1>
+		<ul class="features">
+			<li><a routerLink="list/type/processadores" routerLinkActive="active" >
+				<h1>Procesadores</h1>
+			</a></li>
+			<li><a routerLink="list/type/placaBase" routerLinkActive="active">
+				<h1>Placas Base</h1>
+			</a></li>
+			<li><a routerLink="list/type/discoDuro" routerLinkActive="active">
+				<h1>Discos Duros</h1>
+			</a></li>
+			<li><a routerLink="list/type/tarjetaGrafica" routerLinkActive="active">
+				<h1>Gráficas</h1>
+			</a></li>
+			<li><a routerLink="list/type/ram" routerLinkActive="active">
+				<h1>Memoria RAM</h1>
+			</a></li>
+			<li><a routerLink="list/type/teclado" routerLinkActive="active">
+				<h1>Grabadoras</h1>
+			</a></li>
+			<li><a routerLink="list/type/disquetera" routerLinkActive="active">
+				<h1>Disqueteras</h1>
+			</a></li>
+			<li><a routerLink="list/type/multilectores" routerLinkActive="active">
+				<h1>Multilectores</h1>
+			</a></li>
+			<li><a routerLink="list/type/sonido" routerLinkActive="active">
+				<h1>Sonido</h1>
+			</a></li>
+			<li><a routerLink="list/type/torres" routerLinkActive="active">
+				<h1>Torres</h1>
+			</a></li>
+			<li><a routerLink="list/type/ventilacion" routerLinkActive="active">
+				<h1>Ventilación</h1>
+			</a></li>
+			<li><a routerLink="list/type/fuentes" routerLinkActive="active">
+				<h1>Fuentes</h1>
+			</a></li>
+		</ul>
+	</div>
+</section>
+
+
+
+<!-- Two -->
+<section id="two" class="wrapper alt style2">
+	<section class="spotlight">
+		<div class="image"></div><div class="content">
+			<h2>Magna primis lobortis<br />
+			sed ullamcorper</h2>
+			<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+		</div>
+	</section>
+	<section class="spotlight">
+		<div class="image"></div><div class="content">
+			<h2>Tortor dolore feugiat<br />
+			elementum magna</h2>
+			<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+		</div>
+	</section>
+	<section class="spotlight">
+		<div class="image"></div><div class="content">
+			<h2>Augue eleifend aliquet<br />
+			sed condimentum</h2>
+			<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+		</div>
+	</section>
+</section>
+
+
+
+<!-- CTA -->
+<section id="cta" class="wrapper style4">
+	<div class="inner">
+		<header>
+			<h2>Arcue ut vel commodo</h2>
+			<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+		</header>
+		<ul class="actions vertical">
+			<li><a href="#" class="button fit special">Activate</a></li>
+			<li><a href="#" class="button fit">Learn More</a></li>
+		</ul>
+	</div>
+</section>

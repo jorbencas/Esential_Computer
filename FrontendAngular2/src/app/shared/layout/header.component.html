@@ -1,0 +1,74 @@
+<!-- <header id="header" class="alt">
+  <h1><a href="index.html">Spectral</a></h1>
+  <nav id="nav">
+          <a routerLink="/contact" routerLinkActive="active" class="menuToggle"><span>Contact</span></a>
+          <a routerLink="/" routerLinkActive="active" class="menuToggle"><span>Home</span></a>
+          <a routerLink="/list" routerLinkActive="active" class="menuToggle"><span>Ofertas</span></a>
+              <a routerLink="/login" routerLinkActive="active" ng-show="adminV">Administrar</a>
+          <!-- LogProf 
+              <a id="acceder" ng-show="accederV" href="#/" class="button special" ng-click="open()"  >Acceder</a>
+              <a id='profile' ng-show="profileV" href='#/user/profile'><img ng-show="profileV" id='menuImg' class='icon rounded' src='{{avatar}}'/>{{nombre}}</a>
+              <a id='logout' ng-show="logoutV" ng-click='logout()' >Log Out</a> 
+  </nav>
+</header> -->
+
+<!-- Header -->
+<div>
+    <header id="header" class="alt">
+        <h1><a ui-sref="app.home">Spectral</a></h1>
+        <nav id="nav" > 
+          <ul *showAuthed="false" class="nav navbar-nav pull-xs-right">
+              <li class="nav-item">
+                  <a routerLink="/contact" routerLinkActive="active" ><span>Contact</span></a>
+              </li>      
+         
+              <li class="nav-item">
+                  <a  routerLink="/" routerLinkActive="active" ><span>Home</span></a>
+              </li>
+                
+              <li class="nav-item">
+                  <a routerLink="/list" routerLinkActive="active" ><span>Ofertas</span></a>
+              </li>
+              
+              <li class="nav-item">
+                  <a routerLink="/register" routerLinkActive="active" style="color:red!important;">Sign Up</a>
+              </li>
+
+              <li class="nav-item">
+                  <a routerLink="/login" routerLinkActive="active" style="color:red!important;">Log in</a>
+              </li>
+          </ul>
+             
+          <ul *showAuthed="true" class="nav navbar-nav pull-xs-right">
+          
+              <li class="nav-item">
+                  <a routerLink="/contact" routerLinkActive="active" ><span>Contact</span></a>
+              </li>   
+
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/" routerLinkActive="active"> Home</a>
+              </li>
+
+              <li class="nav-item">
+                  <a routerLink="/list" routerLinkActive="active" ><span>Ofertas</span></a>
+               </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" ui-sref-active="active" ui-sref="app.profile.main({ username: $ctrl.currentUser.username})">
+                    <a class="nav-link"
+                    [routerLink]="['/profile', currentUser.username]"
+                    routerLinkActive="active">
+                    <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
+                    {{ currentUser.username }}
+                    </a>
+                  </a>
+              </li>
+              <li class="nav-item">
+                      <a ui-sref-active="active" routerLink="/" class="btn btn-outline-danger" (click)="logout()" >
+                              <span>Log Out</span>
+                      </a>
+                  </li>
+          </ul>       
+        </nav>
+    </header>
+</div> 

@@ -1,0 +1,19 @@
+<div class="listc-page">
+    <div  style="padding-top:5%;" class="ofertas"></div>
+        <div *ngFor="let o of listComputer">
+           <div *ngFor="let c of o.results">
+              <div class="tarjeta">
+                  <div class="nombre">{{c.name}}</div>
+                  <div class="imagen"><img src="{{c.picture}}" alt="" height="150px" width="150px"></div>
+                  <a routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }"
+                  [routerLink]="['/details', c.id]" class="listb"><span>Details</span></a>        
+                  <div class="morei">
+                      <div> Precio- {{c.price}} </div>
+                      <div> Tipo- {{c.type}} </div>
+                      <div> Marca- {{c.marca}} </div>
+                  </div>
+              </div>
+           </div>
+        </div>
+
+</div>
