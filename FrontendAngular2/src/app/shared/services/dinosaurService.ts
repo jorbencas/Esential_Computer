@@ -14,7 +14,7 @@ export class DinosaurService {
   constructor(private http: Http,private apiService: ApiService) { }
 
   getDinos(): Observable<Dinosaur> {
-    return this.apiService.get('events/')
+    return this.apiService.get('/events/')
     .map(data => data)
   }
 

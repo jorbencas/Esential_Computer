@@ -53,16 +53,15 @@
                   <a routerLink="/list" routerLinkActive="active" ><span>Ofertas</span></a>
                </li>
 
-              <li class="nav-item">
-                  <a class="nav-link" ui-sref-active="active" ui-sref="app.profile.main({ username: $ctrl.currentUser.username})">
-                    <a class="nav-link"
-                    [routerLink]="['/profile', currentUser.username]"
-                    routerLinkActive="active">
-                    <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
-                    {{ currentUser.username }}
-                    </a>
-                  </a>
-              </li>
+               <li class="nav-item">
+                <a class="nav-link"
+                  [routerLink]="['/profile', currentUser.username]"
+                  routerLinkActive="active">
+                  <img [src]="currentUser.image" *ngIf="currentUser.image" class="user-pic" />
+                  {{ currentUser.username }}
+                </a>
+                </li>
+                
               <li class="nav-item">
                       <a ui-sref-active="active" routerLink="/" class="btn btn-outline-danger" (click)="logout()" >
                               <span>Log Out</span>

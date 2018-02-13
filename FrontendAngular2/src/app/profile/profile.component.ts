@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { User, UserService, Profile } from '../shared';
 
 @Component({
@@ -10,7 +9,7 @@ import { User, UserService, Profile } from '../shared';
 export class ProfileComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
   ) {}
 
   profile: Profile;

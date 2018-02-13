@@ -4,6 +4,7 @@ import { NG_VALIDATORS,Validator,Validators,AbstractControl,ValidatorFn } from '
 import { ContactService } from '../shared';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { RouterStateSnapshot, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'contact-page',
   templateUrl: './contact.component.html',

@@ -12,7 +12,7 @@ export class ContactService {
       ) {}
 
      contact(data): Observable<string> {
-      return this.apiService.post('contact/', {dades: data})
+      return this.apiService.post('/contact/', {dades: data})
       .map(
         data => {
           return data;

@@ -7,13 +7,6 @@
               <div class="nombre">{{c.marca}}</div>
               <div class="nombre">{{c.status}}</div>
               <div class="nombre">{{c.type}}</div>
-              <agm-map [latitude]="c.shop[0].latitude" [longitude]="c.shop[0].longitude" class="map">
-                
-                <agm-marker *ngFor="let s of c.shop" [latitude]="s.latitude" [longitude]="s.longitude"></agm-marker>
-
-              </agm-map>
          </div>
-         
-         
       </div>
 </div>

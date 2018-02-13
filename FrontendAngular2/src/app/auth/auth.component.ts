@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Errors, UserService } from '../shared';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'auth-page',
@@ -18,13 +19,16 @@ export class AuthComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
-    private fb: FormBuilder
-  ) {
+    private fb: FormBuilder,
+    public toastr: ToastsManager,
+    private vcr: ViewContainerRef 
+    ) {
     // use FormBuilder to create a form group
     this.authForm = this.fb.group({
       'email': ['', Validators.required],
       'password': ['', Validators.required]
     });
+    this.toastr.setRootViewContainerRef(vcr);
   }
 
   
@@ -50,9 +54,13 @@ export class AuthComponent implements OnInit {
     this.userService
     .attemptAuth(this.authType, credentials)
     .subscribe(
-      data => this.router.navigateByUrl('/settings'),
+      data => {
+      this.toastr.success('Se cuenta de usuario se actualizo correctamente','Bienvenido');
+      setTimeout(() => { this.router.navigateByUrl('/') }, 3000);
+    },
       err => {
         this.errors = err;
+        setTimeout(() => { this.toastr.error(JSON.stringify(err),'Error') }, 3000);
         this.isSubmitting = false;
       }
     );
