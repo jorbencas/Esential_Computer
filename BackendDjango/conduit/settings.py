@@ -11,21 +11,22 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2^f+3@v7$v1f8yt0!s)3-1t$)tlp+xm17=*g))_xoi&&9m#2a&'
+SECRET_KEY =  os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://localhost:8081','127.0.0.1:8081','http://127.0.0.1:8081/','localhost']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',') if os.getenv('ALLOWED_HOSTS') else []
 
 
 # Application definition
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'conduit.apps.profiles',
     'conduit.apps.contact',
     'conduit.apps.events',
+    'conduit.apps.stripe',
 ]
 
 MIDDLEWARE = [
@@ -132,10 +134,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:4200/#!/'
-    'http://localhost:4200'
-)
+CORS_ORIGIN_WHITELIST = os.getenv('CORS_ORIGIN_WHITELIST')
 
 # Tell Django about the custom `User` model we created. The string
 # `authentication.User` tells Django we are referring to the `User` model in
@@ -158,4 +157,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20,
 }
 EMAIL_BACKEND = 'sgbackend.SendGridBackend'
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+STRIPE_SECRET_KEY= os.getenv('STRIPE_SECRET_KEY')

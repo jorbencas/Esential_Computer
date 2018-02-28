@@ -22,6 +22,7 @@ class Event(models.Model):
     date = models.TextField()
     picture = models.TextField()
     description = models.TextField()
+    shop = models.TextField()
 
     class Meta:
         ordering = ('type',)
@@ -32,4 +33,4 @@ class Event(models.Model):
         super(Event, self).save(*args, **kwargs)
 
     def __str__(self):
-        return "Event: {title}".format(title=self.title)
+        return "Event: {name}".format(name=self.name)

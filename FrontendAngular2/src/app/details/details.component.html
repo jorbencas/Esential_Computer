@@ -1,12 +1,32 @@
 <div class="details-page">
     <div class="contentof">
         <div *ngFor="let c of listComputer">
-              <div class="imageof"><img src="{{c.picture}}" alt="" height="150px" width="150px"></div>
-              <div class="nombre">{{c.name}}</div>
-              <div class="nombre">{{c.date}}</div>
-              <div class="nombre">{{c.marca}}</div>
-              <div class="nombre">{{c.status}}</div>
-              <div class="nombre">{{c.type}}</div>
+              <div class="imageof"><img src="{{c.picture}}" alt="" height="300px" width="300px"></div>
+              <div class="atde">{{c.name}}</div>
+              <div class="atde">{{c.date}}</div>
+              <div class="atde">{{c.marca}}</div>
+              <div class="atde">{{c.status}}</div>
+              <div class="atde">{{c.type}}</div>
+              <div class="atde">{{c.id}}</div>
+              
+              <div class="buttonl">
+                <a *showAuthed="true" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/stripe', c.id ]" class="listb"><div class="button">Buy</div></a>
+              </div>
+              
+              <div class="mapcont">
+              <agm-map [latitude]="c.shop[0].latitude" [longitude]="c.shop[0].longitude" class="map">
+                
+                <agm-marker *ngFor="let s of c.shop" [latitude]="s.latitude" [longitude]="s.longitude" 
+                [label]="s.name" [title]="s.name" [markerClickable]></agm-marker>
+
+              </agm-map>
+
+            </div>
+            
+            
          </div>
+         
+         
       </div>
 </div>

@@ -12,15 +12,6 @@
                       <div> Tipo- {{c.type}} </div>
                       <div> Marca- {{c.marca}} </div>
                   </div>
-
-                  <span [hidden]="canModify">
-                    <favorite-button
-                      [article]="article"
-                      (onToggle)="onToggleFavorite($event)">
-                      {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">{{ article.favoritesCount }}</span>
-                    </favorite-button>
-                  </span>
-          
               </div>
            </div>
         </div>

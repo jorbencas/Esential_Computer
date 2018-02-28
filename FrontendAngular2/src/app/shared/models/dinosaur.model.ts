@@ -7,4 +7,5 @@ export class Dinosaur{
     date: string;
     picture: string;
     description: string;
+    shop:string;
 }

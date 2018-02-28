@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^api/', include('conduit.apps.profiles.urls', namespace='profiles')),
     url(r'^api/', include('conduit.apps.contact.urls', namespace='contact')),
     url(r'^api/', include('conduit.apps.events.urls', namespace='events')),
+    url(r'^api/', include('conduit.apps.stripe.urls', namespace='stripe')),
 ]

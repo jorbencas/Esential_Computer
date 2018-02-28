@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.2",
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -21,7 +22,9 @@
     "@angular/platform-browser": "^4.4.6",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angular2-social-login": "^3.1.1",
     "core-js": "^2.4.1",
+    "dotenv": "^5.0.0",
     "marked": "^0.3.6",
     "ng2-dynamic-dialog": "^5.0.0",
     "ng2-toastr": "^4.1.2",

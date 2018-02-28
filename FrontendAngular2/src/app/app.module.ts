@@ -11,9 +11,12 @@ import { EditorModule } from './editor/editor.module';
 import { HomeModule } from './home/home.module';
 import { contactModule } from './contact/contact.module';
 import { listcModule } from './listc/listc.module';
+import { recoverModule } from './recover/recover.module';
+import { environment } from '../environments/environment';
 import { detailsModule } from './details/details.module';
 import { ProfileModule } from './profile/profile.module';
 import { SettingsModule } from './settings/settings.module';
+import { stripeModule } from './Stripe/stripe.module';
 import {
   ApiService,
   ArticlesService,
@@ -27,11 +30,11 @@ import {
   TagsService,
   UserService,
   DinosaurService,
-  ContactService
+  ContactService,
+  stripeService
 } from './shared';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,8 +53,10 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     SettingsModule,
     contactModule,
     listcModule,
+    recoverModule,
     detailsModule,
     BrowserAnimationsModule, 
+    stripeModule,
     ToastModule.forRoot()
   ],
   providers: [
@@ -65,7 +70,9 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     UserService,
     DinosaurService,
     ContactService,
+    stripeService
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

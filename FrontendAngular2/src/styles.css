@@ -3828,11 +3828,11 @@
 	}
 
 	.nombre{
+		width: 100%;
 		margin-top: 0px;
 		font-size: 20px;
 		padding: 5px;
 		padding-right: 120px;
-		margin-left: 10px;
 		background-color: #3a3c6a;
 		float: left;
 	}
@@ -3844,10 +3844,8 @@
 	}
 
 	.contentof{
-		border: 6px solid #3a3c6a;
-		border-radius: 25px;
 		width: 70%;
-		height: 425px;
+		height: 725px;
 		margin-left: 20px;
 		margin-top: 40px;
 		padding: 10px;
@@ -3857,7 +3855,33 @@
 	margin: 5px;
 	margin-right: 20px;
 	margin-top: 0px;
-	height: 300px;
-	width: 300px;
 	float: left;
+}
+
+.user-info{
+	background-color: gray!important;
+}
+
+body > app-root > profile-page > div > div.user-info > div > div > div > a{
+color: #333!important;
+}
+
+.mapcont{
+	margin-top: 10px;
+	float: left;
+}
+
+.atde{
+	width: 60%;
+	margin-top: 5px;
+	font-size: 20px;
+	padding: 5px;
+	padding-right: 120px;
+	background-color: #3a3c6a;
+	float: left;
+}
+
+.buttonl{
+	margin: 30px;
+	float: right!important;
 }

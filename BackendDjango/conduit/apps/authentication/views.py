@@ -1,3 +1,4 @@
+from django.core.mail import send_mail, BadHeaderError
 from rest_framework import status
 from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -9,6 +10,7 @@ from .serializers import (
 )
 from rest_framework import viewsets
 from .models import User
+import uuid
 
 #APIREST_grafica_DRF
 class UserViewSet(viewsets.ModelViewSet):
@@ -22,7 +24,7 @@ class RegistrationAPIView(APIView):
     permission_classes = (AllowAny,)
     renderer_classes = (UserJSONRenderer,)
     serializer_class = RegistrationSerializer
-
+    
     def post(self, request):
         user = request.data.get('user', {})
         # The create serializer, validate serializer, save serializer pattern
@@ -31,6 +33,14 @@ class RegistrationAPIView(APIView):
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        email= user.get('email',None)
+        print user
+        print uuid.uuid4().hex
+        try:
+            send_mail('EsentialComputer', 'Su registros a finalizado con exito', 'segui.guerola@gmail.com', [email])
+        except BadHeaderError:
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -48,6 +58,16 @@ class LoginAPIView(APIView):
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class RecoverUpdateAPIView(APIView):
+    permission_classes = (AllowAny,)
+    serializer_class = UserSerializer
+    def post(self, request):
+        user_data = request.data.get('user', {})
+        print user_data
+       
+        return Response(user_data, status=status.HTTP_200_OK)
 
 
 class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):

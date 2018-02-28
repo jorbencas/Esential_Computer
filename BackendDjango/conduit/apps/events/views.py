@@ -15,7 +15,7 @@ class EventViewSet(viewsets.ModelViewSet):
 
 class EventList(generics.ListAPIView):
     """ List last 10 events, or create a new one """
-    queryset = Event.objects.all().order_by('-type')[:10]
+    queryset = Event.objects.all()
     serializer_class = EventSerializer
 
 

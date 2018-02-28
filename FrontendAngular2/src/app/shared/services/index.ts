@@ -8,3 +8,4 @@ export * from './tags.service';
 export * from './user.service';
 export * from './dinosaurService';
 export * from './contact.service';
+export * from './stripe.service';

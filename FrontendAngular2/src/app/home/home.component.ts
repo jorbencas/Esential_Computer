@@ -3,6 +3,7 @@ import { NgModel } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { Router, RouterStateSnapshot, ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'home-page',
   templateUrl: './home.component.html',
@@ -13,6 +14,7 @@ export class HomeComponent{
     private router: Router,
     private route: ActivatedRoute
   ) {}
+ 
   name: string = '';
   onSubmit(f: NgForm) {
     console.log(f.value); 
